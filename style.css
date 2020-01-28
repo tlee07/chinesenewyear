@@ -10,10 +10,10 @@ body{
 .canvas{
     background-color:red;
     position:absolute;
-    margin-top:0px;
+    margin-top:200px;
     margin-left:0px;
     width:100vw;
-    height:150vh;
+    height:100vh;
     z-index:-200;
 
 }
@@ -253,7 +253,44 @@ h3{
     margin-top:-2%;
 }
 
+.cat{
+    position:absolute;
+    width: 5%;
+    height: 8%;
+    /* background-color: blue; */
+    /* border-radius :50%; */
+    
+    z-index:-10;
+}
 
+#poop{
+    position:absolute;
+    width:5%;
+    height:8%;
+    z-index:200;
+    
+}
+
+.newcat{
+    /* background-image: "url('./assets/cat.png')"; */
+    position:absolute;
+    background-image:url("./assets/cat.png");
+    /* background-color:black; */
+    /* background-color: black; */
+    width: 5%;
+    height: 8%;
+    visibility: hidden;  
+    /* background-color: blue; */
+    /* border-radius :50%; */
+    
+    
+}
+
+
+/* .catcontainer{
+    background-color: blue;
+    width
+} */
 
 .container{
     width: 400px;

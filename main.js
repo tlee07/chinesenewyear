@@ -1,11 +1,103 @@
 
-function logName(){
-    names[2] = "b";
-    console.log(names[2]);
-    console.log(nameObject.lastName);
 
+
+function mouseLog(){
+    var x = event.pageX;
+    var y = event.pageY;
+
+    var cursor = document.querySelector(".cat");
+    // cursor.style.zIndex = "110";
+    cursor.style.left = x-40 + "px";
+    cursor.style.top = y-30 + "px";
+    var xcollide = x-40;
+    var ycollide = y-30;
+
+    // var xcoin = getOffset(document.querySelector(".newcoin")).left;
+    // var ycoin = getOffset(document.querySelector(".newcoin")).top;
+
+    if(xcollide> 40 && xcollide < 140 && ycollide >20 && ycollide <100){
+    cursor.style.width = "20%";
+    cursor.style.height = "30%";
+    }
+
+    else if(xcollide> 40 && xcollide < 140 && ycollide >770 && ycollide <870){
+        cursor.style.width = "20%";
+        cursor.style.height = "30%";
+    }
+
+    else if(xcollide> 1440 && xcollide < 1540 && ycollide >770 && ycollide <870){
+        cursor.style.width = "20%";
+        cursor.style.height = "30%";
+    }
+
+    else if(xcollide> 1440 && xcollide < 1540 && ycollide >20 && ycollide <100){
+        cursor.style.width = "20%";
+        cursor.style.height = "30%";
+    }
+
+    // else if(xcollide == xcoin && ycollide == ycoin){
+    //     cursor.style.width = "20%";
+    //     cursor.style.height = "30%";
+
+    // }
+    else{
+        cursor.style.width = "";
+        cursor.style.height = "";
+
+    }
+    
+}
+
+function savecat(){
+    console.log("saved");
+    var x = event.pageX;
+    var y = event.pageY;
+
+    var container = document.querySelector("body");
+    var poop = document.createElement("img");
+    poop.src = "./assets/gold.png";
+    // poop.innerHTML = "新年快樂";
+    poop.id = "poop";
+
+    // newcat.className = "cat";
+    // newcat.style.backgroundImage = document.querySelector(".cat");
+    // newcat.style.backgroundImage = "url('https://www.postatee.com/uploads/store//products/imgs/front_img/1809/full/1536136349T1Wy8U.png')";
+    
+    poop.style.left = x-40 + "px";
+    poop.style.top = y-30 + "px";
+    // newcat.style.visibility = "visible";
+
+    container.appendChild(poop);
+    // newcat.style.zIndex = 100;
+    
 
 }
+
+// function eatcoin(){
+    
+//     console.log("eat");
+
+
+// }
+
+
+
+function makecoin(){
+
+    var coincontainer = document.querySelector(".coincontainer");
+
+    var coin = document.createElement("h2");
+    coin.className = "newcoin";
+    coin.innerHTML = cointext.content;
+
+    coin.style.left = (Math.random()*1800) + 'px';
+
+
+    coincontainer.appendChild(coin);
+    
+
+}
+
 
 var sign1={
     title: "心有所鼠",
@@ -109,7 +201,9 @@ box1.onclick = function(){
     coincontainer.style.zIndex = "200";
     
     canvas.style.zIndex = "120";
-    
+    var cursor = document.querySelector(".cat");
+    cursor.style.zIndex = "130";
+
     console.log("sign1");
     var sign1container = document.createElement("div");
     sign1container.className = "signcontainer";
@@ -136,7 +230,9 @@ box1.onclick = function(){
     sign1container.appendChild(image);
     maincontainer.appendChild(sign1container);
     
+    
 };
+
 
 
 
@@ -152,6 +248,8 @@ box2.onclick = function(){
     coincontainer.style.zIndex = "200";
 
     canvas.style.zIndex = "120";
+    var cursor = document.querySelector(".cat");
+    cursor.style.zIndex = "130";
     console.log("sign2");
     var sign2container = document.createElement("div");
     sign2container.className = "signcontainer";
@@ -188,6 +286,8 @@ box3.onclick = function(){
     coincontainer.style.zIndex = "200";
 
     canvas.style.zIndex = "120";
+    var cursor = document.querySelector(".cat");
+    cursor.style.zIndex = "130";
     console.log("sign3");
     var sign3container = document.createElement("div");
     sign3container.className = "signcontainer";
@@ -224,6 +324,8 @@ box4.onclick = function(){
     coincontainer.style.zIndex = "200";
 
     canvas.style.zIndex = "120";
+    var cursor = document.querySelector(".cat");
+    cursor.style.zIndex = "130";
     console.log("sign4");
     var sign4container = document.createElement("div");
     sign4container.className = "signcontainer";
@@ -259,6 +361,8 @@ box5.onclick = function(){
     coincontainer.style.zIndex = "200";
 
     canvas.style.zIndex = "120";
+    var cursor = document.querySelector(".cat");
+    cursor.style.zIndex = "130";
     console.log("sign5");
     var sign5container = document.createElement("div");
     sign5container.className = "signcontainer";
@@ -284,37 +388,27 @@ box5.onclick = function(){
     sign5container.appendChild(description);
     sign5container.appendChild(image);
     maincontainer.appendChild(sign5container);
-};
-
-
-
-
-function makecoin(){
-
-    // counter += 1;
-    var coincontainer = document.querySelector(".coincontainer");
-    // var ourDiv = document.createElement("div");
-    // var text = document.createTextNode(counter);
-    var coin = document.createElement("h2");
-    coin.className = "newcoin";
-    coin.innerHTML = cointext.content;
-
-    // var randomX = Math.floor(Math.random()*5);
-    coin.style.left = (Math.random()*1800) + 'px';
-    
-
-    // ourDiv.appendChild(text);
-    coincontainer.appendChild(coin);
-    
-    console.log("function running");
 
 }
+
+
+
+
 
 
 
 function doneclick(){
         alert("您今年的運勢已揭曉！明年再來吧～");
 }
+
+// var sign = document.querySelector(".signcontainer");
+
+// sign.addEventListener("click", function(){
+//     console.log("yooo");
+//     doneclick()});
+//     console.log("yooo");
+//     doneclick();
+// }
 
 
 function canvasclick(){
